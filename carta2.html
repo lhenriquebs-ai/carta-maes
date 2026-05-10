@@ -1,0 +1,340 @@
+```html id="carta-chiara-ajustada"
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Feliz Dia das Mães</title>
+
+<!-- FONTES ELEGANTES -->
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@600&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    overflow:hidden;
+    background:
+    linear-gradient(rgba(255,240,245,0.75), rgba(255,240,245,0.75)),
+    url('https://images.unsplash.com/photo-1526045612212-70caf35c14df?q=80&w=1600&auto=format&fit=crop');
+
+    background-size:cover;
+    background-position:center;
+    min-height:100vh;
+}
+
+/* FUNDO SUAVE */
+
+body::before{
+    content:'';
+    position:fixed;
+    width:100%;
+    height:100%;
+    backdrop-filter: blur(3px);
+    z-index:-1;
+}
+
+/* CONTAINER */
+
+.container{
+    width:100%;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    padding:20px;
+}
+
+/* CARTA */
+
+.carta{
+    width:360px;
+    height:230px;
+
+    background:
+    linear-gradient(to bottom,#ff9fc4,#ff6fa5);
+
+    border-radius:18px;
+
+    position:relative;
+
+    cursor:pointer;
+
+    box-shadow:0 20px 50px rgba(0,0,0,0.35);
+
+    transition:0.4s;
+
+    overflow:hidden;
+}
+
+.carta::before{
+    content:'';
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    background:
+    url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=1200&auto=format&fit=crop');
+
+    background-size:cover;
+
+    opacity:0.25;
+}
+
+.carta:hover{
+    transform:scale(1.03);
+}
+
+.tampa{
+    position:absolute;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:#ffc0d9;
+
+    clip-path: polygon(0 0,50% 50%,100% 0);
+
+    transform-origin:top;
+
+    transition:1s;
+}
+
+.texto-carta{
+    position:absolute;
+
+    width:100%;
+
+    text-align:center;
+
+    top:88px;
+
+    color:white;
+
+    font-size:28px;
+
+    font-family:'Playfair Display', serif;
+
+    font-weight:bold;
+
+    text-shadow:0 3px 10px rgba(0,0,0,0.3);
+}
+
+/* CARD */
+
+.card{
+    display:none;
+
+    width:92%;
+    max-width:760px;
+
+    border-radius:35px;
+
+    padding:35px;
+
+    text-align:center;
+
+    animation: aparecer 1.2s ease;
+
+    box-shadow:0 20px 50px rgba(0,0,0,0.25);
+
+    background:
+    linear-gradient(rgba(255,248,250,0.92), rgba(255,248,250,0.92)),
+    url('https://images.unsplash.com/photo-1468327768560-75b778cbb551?q=80&w=1400&auto=format&fit=crop');
+
+    background-size:cover;
+
+    background-position:center;
+}
+
+.card h1{
+    color:#d63384;
+
+    margin-bottom:25px;
+
+    font-size:42px;
+
+    font-family:'Playfair Display', serif;
+
+    text-shadow:0 2px 10px rgba(255,255,255,0.6);
+}
+
+.card p{
+    color:#5a4a4a;
+
+    font-size:22px;
+
+    line-height:1.7;
+
+    font-family:'Cormorant Garamond', serif;
+
+    font-weight:600;
+}
+
+/* ASSINATURA */
+
+.assinatura{
+    font-family:'Great Vibes', cursive !important;
+
+    font-size:46px !important;
+
+    color:#e83e8c !important;
+
+    margin-top:30px;
+}
+
+/* CORAÇÕES */
+
+.coracao{
+    position:fixed;
+
+    color:#ff4f8b;
+
+    animation: subir 5s linear infinite;
+
+    font-size:25px;
+
+    pointer-events:none;
+}
+
+/* ANIMAÇÕES */
+
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform:translateY(40px) scale(0.95);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+@keyframes subir{
+    from{
+        transform:translateY(100vh);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-100px);
+        opacity:0;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- CARTA -->
+<div class="carta" id="envelope" onclick="abrirCarta()">
+
+<div class="tampa" id="tampa"></div>
+
+<div class="texto-carta">
+💌 Clique para abrir 💌
+</div>
+
+</div>
+
+<!-- MENSAGEM -->
+
+<div class="card" id="mensagem">
+
+<h1>Feliz Dia das Mães ❤️</h1>
+
+<p>
+Querida Chiara,
+</p>
+
+<p>
+Neste Dia das Mães, quero te desejar muito amor,
+paz e felicidade.
+</p>
+
+<p>
+Você é uma mulher incrível, forte, carinhosa e cheia de luz,
+e tenho certeza de que transmite tudo isso para quem tem
+a sorte de estar ao seu lado.
+</p>
+
+<p>
+Que nunca faltem motivos para sorrir,
+abraços sinceros e momentos especiais
+ao lado de quem você ama.
+</p>
+
+<p>
+Você merece tudo de mais bonito nesta vida.
+</p>
+
+<p class="assinatura">
+Com carinho,<br>
+Luiz Henrique
+</p>
+
+</div>
+
+</div>
+
+<script>
+
+/* CORAÇÕES */
+
+function criarCoracao(){
+
+const coracao = document.createElement('div');
+
+coracao.classList.add('coracao');
+
+coracao.innerHTML = '❤️';
+
+coracao.style.left = Math.random()*100 + 'vw';
+
+coracao.style.fontSize = (Math.random()*20+20)+'px';
+
+document.body.appendChild(coracao);
+
+setTimeout(()=>{
+coracao.remove();
+},5000);
+
+}
+
+setInterval(criarCoracao,400);
+
+/* ABRIR CARTA */
+
+function abrirCarta(){
+
+document.getElementById('tampa').style.transform='rotateX(180deg)';
+
+setTimeout(()=>{
+
+document.getElementById('envelope').style.display='none';
+
+document.getElementById('mensagem').style.display='block';
+
+},900);
+
+}
+
+</script>
+
+</body>
+</html>
+```
